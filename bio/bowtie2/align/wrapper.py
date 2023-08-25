@@ -69,19 +69,27 @@ if metrics:
     extra += f" --met-file {metrics} "
 
 unaligned = snakemake.output.get("unaligned")
-if unaligned:
+if unaligned.endswith("gz"):
+    extra += f" --un-gz {unaligned} "
+else:
     extra += f" --un {unaligned} "
 
 unpaired = snakemake.output.get("unpaired")
-if unpaired:
+if unpaired.endswith("gz"):
+    extra += f" --al-gz {unpaired} "
+else:
     extra += f" --al {unpaired} "
 
 unconcordant = snakemake.output.get("unconcordant")
-if unconcordant:
+if unconcordant.endswith("gz"):
+    extra += f" --un-conc-gz {unconcordant} "
+else:
     extra += f" --un-conc {unconcordant} "
 
 concordant = snakemake.output.get("concordant")
-if concordant:
+if concordant.endswith("gz"):
+    extra += f" --al-conc-gz {concordant} "
+else:
     extra += f" --al-conc {concordant} "
 
 
