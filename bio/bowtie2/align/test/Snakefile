@@ -90,7 +90,7 @@ rule test_bowtie2_cram:
         "mapped_idx/{sample}.cram",
         # idx="",
         # metrics="",
-        # unaligned="",
+        unaligned="mapped_idx/{sample}.unaligned.gz",
         # unpaired="",
         # unconcordant="",
         # concordant="",
